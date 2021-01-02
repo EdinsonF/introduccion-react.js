@@ -7,7 +7,7 @@ import Formulario from './components/Formulario';
 
 
 import { todos } from './todos.json';
-console.log(todos);
+
 
 class App extends Component {
 
@@ -15,15 +15,37 @@ constructor(){
   super();
   this.state = {
     todos
-  }
+  };
+  console.log(this.state.todos);
+
+  this.handleAddAll = this.handleAddAll.bind(this);
+
+}
+
+handleAddAll(todo){
+  
+  this.setState({
+    todos: [...this.state.todos, todo]
+  })
+
+}
+
+removeTask(index){
+  
+  this.setState({
+    todos : this.state.todos.filter((e, i) => {
+      console.log(i);
+     return i !== index
+    })
+  })
 }
   render(){
 
      const datos = this.state.todos.map((todo, i) =>{
        
         return(
-        <div className="col-md-4">
-            <div className="card mt-4">
+        <div className="col-md-4 ">
+            <div className="card mt-4" key={i}>
               
                 <div className="row card-header">
                   <div className="col">
@@ -45,6 +67,9 @@ constructor(){
                <div className="card-body">
                 {todo.descripcion}
               </div> 
+              <div className="card-footer">
+                <button className="btn btn-danger" onClick={this.removeTask.bind(this, i)}/>
+              </div>
             </div>
         </div>
           
@@ -56,20 +81,24 @@ constructor(){
         <div className="App">
           <Navegacion titulo="Mis tareas" dato={this.state.todos.length}/>
           <div className="row">
-            <div className="col-md-4 mt-4">
-                <Formulario />
-            </div>
+            
+              <div className="col-md-3 container">
+              <img src={logo} className="App-logo" alt="logo" /> 
+                  <Formulario onAddAll={this.handleAddAll}/>
+              </div>
+           
+            
             <div className="col-md-8">
                 <div className="container">
-                <div className="row">
-                  {datos}
+                  <div className="row">
+                    {datos}
+                  </div>
                 </div>
-          </div>
             </div>
           </div>
 
           
-          <img src={logo} className="App-logo" alt="logo" /> 
+         
         </div>
     )
   }
