@@ -11,14 +11,15 @@ import { todos } from './todos.json';
 
 class App extends Component {
 
-constructor(){
+constructor(){ 
   super();
   this.state = {
     todos
   };
-  console.log(this.state.todos);
 
   this.handleAddAll = this.handleAddAll.bind(this);
+
+  this.url = 'http://localhost:3000/todos';
 
 }
 
@@ -30,22 +31,25 @@ handleAddAll(todo){
 
 }
 
-removeTask(index){
+async removeTask(id){
   
-  this.setState({
-    todos : this.state.todos.filter((e, i) => {
-      console.log(i);
-     return i !== index
-    })
-  })
+  try {
+    await fetch(`${this.url}/${id}`,{
+        method : 'DELETE'
+    });
+       
+} catch (error) {
+    console.log(error);
+}
+  
 }
   render(){
 
-     const datos = this.state.todos.map((todo, i) =>{
+     const datos = this.state.todos.map((todo) =>{
        
         return(
         <div className="col-md-4 ">
-            <div className="card mt-4" key={i}>
+            <div className="card mt-4" key={todo.id}>
               
                 <div className="row card-header">
                   <div className="col">
@@ -68,7 +72,7 @@ removeTask(index){
                 {todo.descripcion}
               </div> 
               <div className="card-footer">
-                <button className="btn btn-danger" onClick={this.removeTask.bind(this, i)}/>
+                <button className="btn btn-danger" onClick={this.removeTask.bind(this, todo.id)}>X</button>
               </div>
             </div>
         </div>

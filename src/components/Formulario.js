@@ -14,6 +14,8 @@ class Formulario extends Component{
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
 
+        this.url = 'http://localhost:3000/todos';
+
     }
 
     handleInput(e){
@@ -25,25 +27,25 @@ class Formulario extends Component{
         
     }
 
-    handleSubmit(e){
+    async handleSubmit(e){
         
         e.preventDefault();
-
-        fetch('./todos.json', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(
-                this.state
-            )
-        });
-    
+        
+        try {
+            await fetch(this.url, {
+                method: 'POST',
+                body: JSON.stringify(this.state),
+                headers: {
+                    'Content-Type': 'application/json'
+            }
+            });
+        } catch (error) {
+            console.log(error);
+        }
+        
         
     }
         
-   
         render(){
 
             return (

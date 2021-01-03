@@ -1,29 +1,25 @@
 {
-    "todos":[
-        {
-            "titulo": "Tarea tare tarea",
-            "responsable": "Edinson",
-            "descripcion": "Realizar tarea",
-            "prioridad": "Baja"
-        },
-        {
-            "titulo": "Tarea 2",
-            "responsable": "Jose",
-            "descripcion": "Realizar tarea",
-            "prioridad": "Media"
-        },
-        {
-            "titulo": "Tarea 3",
-            "responsable": "Andres",
-            "descripcion": "Realizar tarea",
-            "prioridad": "Alta"
-        },
-        {
-            "titulo": "Tarea 4",
-            "responsable": "Andres",
-            "descripcion": "Realizar tarea",
-            "prioridad": "Alta"
-        }
-    ]
-    
+  "todos": [
+    {
+      "titulo": "titulo",
+      "responsable": "aaaaa",
+      "descripcion": "asssass",
+      "prioridad": "Media",
+      "id": 2
+    },
+    {
+      "titulo": "comer",
+      "responsable": "dfdfd",
+      "descripcion": "gfgfgfg",
+      "prioridad": "Media",
+      "id": 3
+    },
+    {
+      "titulo": "comer",
+      "responsable": "aaaaa",
+      "descripcion": "ytytytyt",
+      "prioridad": "Media",
+      "id": 4
+    }
+  ]
 }
