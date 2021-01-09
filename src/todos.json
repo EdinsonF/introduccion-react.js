@@ -1,25 +1,5 @@
 {
   "todos": [
-    {
-      "titulo": "titulo",
-      "responsable": "aaaaa",
-      "descripcion": "asssass",
-      "prioridad": "Media",
-      "id": 2
-    },
-    {
-      "titulo": "comer",
-      "responsable": "dfdfd",
-      "descripcion": "gfgfgfg",
-      "prioridad": "Media",
-      "id": 3
-    },
-    {
-      "titulo": "comer",
-      "responsable": "aaaaa",
-      "descripcion": "ytytytyt",
-      "prioridad": "Media",
-      "id": 4
-    }
+    
   ]
 }
