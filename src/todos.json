@@ -1,5 +1,18 @@
 {
   "todos": [
-    
+    {
+      "titulo": "comer",
+      "responsable": "edinson",
+      "descripcion": "tengo que comer",
+      "prioridad": "Alta",
+      "id": 1
+    },
+    {
+      "titulo": "Ejercicios",
+      "responsable": "Mila",
+      "descripcion": "hay que hacer ejercicios",
+      "prioridad": "Alta",
+      "id": 2
+    }
   ]
 }

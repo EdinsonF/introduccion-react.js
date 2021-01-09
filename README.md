@@ -13,5 +13,6 @@ json-server --watch todos.json
 
 # Nota
 
-si corres el json-server automaticamene coje el puerto 3000, y luego al correr el npm start React tambien tiene ese puerto, solo confirmar y automaticamente cambia al 3001
+ubicarse en la carpeta src/ para ejecutar el json server
+luego correr react con npm start
 
